@@ -29,25 +29,25 @@ button_one_long_press:
   selector:
     action: {}
 trigger:
-	- platform: device
-		device_id: !input switch
-		domain: mqtt
-		type: action
-		subtype: single
-	- platform: device
-		device_id: !input switch
-		domain: mqtt
-		type: action
-		subtype: double
-	- platform: device
-		device_id: !input switch
-		domain: mqtt
-		type: action
-		subtype: hold
+- platform: device
+  device_id: !input switch
+  domain: mqtt
+  type: action
+  subtype: single
+- platform: device
+  device_id: !input switch
+  domain: mqtt
+  type: action
+  subtype: double
+- platform: device
+  device_id: !input switch
+  domain: mqtt
+  type: action
+  subtype: hold
 
 action:
 - variables:
-	command: '{{ trigger.payload }}'
+        command: '{{ trigger.payload }}'
 - choose:
 	- conditions: '{{ command == ''single'' }}'
 		sequence: !input button_one_short_press
