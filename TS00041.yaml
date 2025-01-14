@@ -51,7 +51,7 @@ variables:
 command: '{{ trigger.payload }}'
 choose:
 conditions:
-'{{ command == ‘‘single’’ }}'
+'{{ command == ''single'' }}'
 sequence: !input button_one_short_press
 conditions:
 '{{ command == ''double'' }}'
