@@ -48,14 +48,14 @@ subtype: hold
 action:
 
 variables:
-command: ‘{{ trigger.payload }}’
+command: '{{ trigger.payload }}'
 choose:
 conditions:
-‘{{ command == ‘‘single’’ }}’
+'{{ command == ‘‘single’’ }}'
 sequence: !input button_one_short_press
 conditions:
-‘{{ command == ‘‘double’’ }}’
+'{{ command == ''double'' }}'
 sequence: !input button_one_double_press
 conditions:
-‘{{ command == ‘‘hold’’ }}’
+'{{ command == ''hold'' }}'
 sequence: !input button_one_long_press
